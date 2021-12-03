@@ -4,21 +4,28 @@ import { Form, Row, Col } from "react-bootstrap";
 import {Button} from "react-bootstrap";
 import { setLogIn } from '../action';
 import { requestlogin } from '../thunk/userRequest';
+import { useHistory } from 'react-router';
 
 
 export default function Login() {
    const dispatch= useDispatch()
+   const history = useHistory();
    const selector =useSelector((state)=> state.login.logindetail)
     const handelChangeInput = (e) => {
         dispatch(setLogIn({...selector, [e.target.name]: e.target.value}))
-        console.log(selector);
+       
        
 }
 const handleSubmit=(e)=>{
     e.preventDefault()
     console.log(selector)
+    history.push("/dashboard");
     dispatch(requestlogin(selector));
    
+}
+const handleClick=(e)=>{
+    e.preventDefault()
+    history.push("/registration");
 }
 
 
@@ -40,6 +47,8 @@ const handleSubmit=(e)=>{
                 </Col>
                 </Form.Group> 
                 <Button type="submit" varient="danger">submit</Button>
+                <Button type="submit" varient="danger" onClick={handleClick}>log out</Button>
+
 
                 </Form>
         </div>

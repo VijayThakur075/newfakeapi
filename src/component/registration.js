@@ -23,6 +23,11 @@ function Registration(){
             dispatch(requestUser(userdetail));
             history.push('/login')
     }
+
+    const handleClick=(e)=>{
+        e.preventDefault()
+        history.push("/login")
+    }
     
     return(
         <div>
@@ -40,7 +45,8 @@ function Registration(){
                 <Form.Control type="password" name="password" value={userdetail.password} onChange={handelChangeInput} />
                 </Col>
                 </Form.Group> 
-                <Button type="submit" varient="danger">submit</Button>
+                <Button type="submit" varient="success">signUp</Button>
+                <Button type="logout" varient="danger" onClick={handleClick}>login</Button>
 
              </Form> 
         </div>

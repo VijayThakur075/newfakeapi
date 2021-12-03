@@ -1,22 +1,22 @@
-import {SET_USER} from "../action";
+import { SET_USER } from "../action";
 
-const intialState={
-   userdetail:{
-       eamil:"",
-       password:"",
-   },
+const intialState = {
+    userdetail: {
+        eamil: "",
+        password: "",
+    },
 }
 
-const user=(state = intialState, action)=>{
-    switch(action.type){
+const user = (state = intialState, action) => {
+    switch (action.type) {
         case SET_USER:
-            return{
+            return {
                 ...state,
-               userdetail: action.payload,
+                userdetail: action.payload,
             };
-        
-        default : 
+
+        default:
             return state;
     }
 }
-export default user ;
+export default user;
