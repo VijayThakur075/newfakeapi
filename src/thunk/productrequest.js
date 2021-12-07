@@ -1,20 +1,18 @@
 import axios from "axios";
-import { setProduct, setLocation, setTransiction, setFamilies} from "../action";
+import { setProduct, setLocation, setTransiction, setFamilies } from "../action";
 
 const client = axios.create({
     baseURL: 'http://localhost:8000',
 });
-// const gettoken=JSON.parse( localStorage.getItem('token'))
 
-// console.log(gettoken);
-const aaa= JSON.parse(localStorage.getItem('token'))
-client.defaults.headers.common['Authorization'] = `Bearer ${aaa}` ;
+const aaa = JSON.parse(localStorage.getItem('token'))
+client.defaults.headers.common['Authorization'] = `Bearer ${aaa}`;
 
-
-export const requestProduct = () => async (dispatch) => {
+export const requestProduct = (prevFilters) => async (dispatch) => {
     try {
-        const response = await client.get('/products');
-        dispatch(setProduct(response.data));
+        const params = { _limit: prevFilters.limit, _page: prevFilters.page };
+        const response = await client.get('/products', { params });
+        dispatch(setProduct({ product: response.data }));
         console.log(response.data);
     } catch (err) {
         console.log(err);

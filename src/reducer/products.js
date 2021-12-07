@@ -1,7 +1,11 @@
-import { SET_PRODUCT } from "../action";
+import { SET_PRODUCT, SET_PAGE } from "../action";
+import { SET_PRODUCT_PER_PAGE } from "../action";
 
 const intialState = {
-    product: [],
+    products: {
+        product: [],
+        filters: { page: 1, limit: 4 }
+    }
 }
 
 const productuser = (state = intialState, action) => {
@@ -9,8 +13,22 @@ const productuser = (state = intialState, action) => {
         case SET_PRODUCT:
             return {
                 ...state,
-                product: action.payload,
-            };
+                products: {
+                    ...state.products,
+                    ...action.payload,
+                }
+            }
+        case SET_PAGE:
+            return {
+                ...state,
+                products: {
+                    ...state.products,
+                    filters: {
+                        ...state.products.filters,
+                        ...action.payload,
+                    }
+                }
+            }
 
         default:
             return state;

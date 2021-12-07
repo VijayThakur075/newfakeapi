@@ -1,22 +1,22 @@
-import {SET_LOGIN} from "../action";
+import { SET_LOGIN } from "../action";
 
-const intialState={
-   logindetail:{
-       eamil:"",
-       password:"",
-   },
+const intialState = {
+    logindetail: {
+        eamil: "",
+        password: "",
+    },
 }
 
-const login=(state = intialState, action)=>{
-    switch(action.type){
+const login = (state = intialState, action) => {
+    switch (action.type) {
         case SET_LOGIN:
-            return{
+            return {
                 ...state,
-               logindetail: action.payload,
+                logindetail: action.payload,
             };
-        
-        default : 
+
+        default:
             return state;
     }
 }
-export default login ;
+export default login;

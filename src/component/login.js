@@ -6,12 +6,11 @@ import { setLogIn } from '../action';
 import { requestlogin } from '../thunk/userRequest';
 import { useHistory } from 'react-router';
 
-
 export default function Login() {
    const dispatch= useDispatch()
    const history = useHistory();
    const selector =useSelector((state)=> state.login.logindetail)
-    const handelChangeInput = (e) => {
+   const handelChangeInput = (e) => {
         dispatch(setLogIn({...selector, [e.target.name]: e.target.value}))
        
        
