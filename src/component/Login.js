@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch,useSelector} from 'react-redux'
-import { Form, Row, Col } from "react-bootstrap";
+import { Form,Container, Col } from "react-bootstrap";
 import {Button} from "react-bootstrap";
 import { setLogIn } from '../action';
 import { requestlogin } from '../thunk/userRequest';
@@ -31,15 +31,18 @@ const handleClick=(e)=>{
     return (
         <div>
           <h1>log in page</h1>
-
+<div className="align-center">
             <Form onSubmit={handleSubmit}>
-                <Form.Group  as={Row} className="mb-3">
+                <Form.Group   className="mb-3">
+                   
                 <Form.Label >email</Form.Label>
+                <Container>
                 <Col sm="6">
                 <Form.Control type="email" name="email" value={selector.email} onChange={handelChangeInput}/>
                 </Col>
+                </Container>
                 </Form.Group>
-                <Form.Group  as={Row} className="mb-3">
+                <Form.Group   className="mb-3">
                 <Form.Label >password</Form.Label>
                 <Col sm="6">
                 <Form.Control type="password" name="password" value ={selector.password} onChange={handelChangeInput} />
@@ -50,6 +53,7 @@ const handleClick=(e)=>{
 
 
                 </Form>
+                </div>
         </div>
     )
 }

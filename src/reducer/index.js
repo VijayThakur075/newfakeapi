@@ -5,6 +5,7 @@ import productuser from "./products";
 import userLocation from "./location";
 import transictionuser from "./transiction"
 import userFamily from "./family";
+import userToken from "./token";
 
 const reducer=combineReducers({
     user,
@@ -13,6 +14,7 @@ const reducer=combineReducers({
     userLocation,
     transictionuser,
     userFamily,
+    userToken,
 })
 
 export default reducer;

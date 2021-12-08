@@ -22,9 +22,9 @@ export const requestlogin = (selector) => async (dispatch) => {
 
         const response = await client.post('/auth/login', selector);
         dispatch(setLogIn(response.data));
-        const usertoken = JSON.stringify(response.data.access_token)
-        const data = localStorage.setItem('token', usertoken)
-        console.log(data);
+         localStorage.setItem('token', response.data.access_token)
+        dispatch(setToken(response.data.access_token))
+        console.log(response.data.access_token);
     } catch (err) {
         console.log(err);
     }

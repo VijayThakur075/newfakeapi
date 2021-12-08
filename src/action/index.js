@@ -4,20 +4,17 @@ export const SET_PRODUCT = "SET_PRODUCT";
 export const SET_TOKEN = "SET_TOKEN";
 export const SET_LOCATION = "SET_LOCATION";
 export const SET_TRANSICTION = "SET_TRANSICTION";
-export const SET_FAMILIES ="SET_FAMILIES";
- export const SET_PAGE="SET_PAGE";
-// export const SET_PRODUCT_PER_PAGE ="SET_PRODUCT_PER_PAGE";
+export const SET_FAMILIES = "SET_FAMILIES";
+export const SET_PAGE = "SET_PAGE";
 
-
-export const setUser = (payload) => ({ type: SET_USER, payload})
-export const setLogIn = (payload) => ({ type: SET_LOGIN, payload})
-export const setProduct = (payload) => ({type: SET_PRODUCT, payload})
-export const setToken = (payload) => ({type: SET_TOKEN, payload})
-export const setLocation = (payload) => ({type: SET_LOCATION, payload})
-export const setTransiction = (payload) => ({type: SET_TRANSICTION, payload})
-export const setFamilies= (payload) => ({type: SET_FAMILIES, payload})
-export const setPage= (payload) => ({type: SET_PAGE, payload})
-// export const setProductPerPage= () => ({type: SET_PRODUCT_PER_PAGE})
+export const setUser = (payload) => ({ type: SET_USER, payload });
+export const setLogIn = (payload) => ({ type: SET_LOGIN, payload });
+export const setProduct = (payload) => ({ type: SET_PRODUCT, payload });
+export const setToken = (payload) => ({ type: SET_TOKEN, payload });
+export const setLocation = (payload) => ({ type: SET_LOCATION, payload });
+export const setTransiction = (payload) => ({ type: SET_TRANSICTION, payload });
+export const setFamilies = (payload) => ({ type: SET_FAMILIES, payload });
+export const setPage = (payload) => ({ type: SET_PAGE, payload });
 
 
 

@@ -3,10 +3,10 @@ import { setProduct, setLocation, setTransiction, setFamilies } from "../action"
 
 const client = axios.create({
     baseURL: 'http://localhost:8000',
+    
 });
 
-const aaa = JSON.parse(localStorage.getItem('token'))
-client.defaults.headers.common['Authorization'] = `Bearer ${aaa}`;
+client.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('token')}`;
 
 export const requestProduct = (prevFilters) => async (dispatch) => {
     try {
